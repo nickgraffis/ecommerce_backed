@@ -94,13 +94,13 @@ router.post('/:model', async (req, res) => {
           tag_id: parseInt(tag_id),
         };
       });
-      const dataTags = await ProductTag.bulkCreate(productTags);
+      const tags = await ProductTag.bulkCreate(productTags);
       res.status(200).json({
         data,
-        dataTags,
+        tags,
       });
     } else {
-      res.status(200).json(data);
+      res.status(200).json(`Created new ${req.params.model}!`);
     }
   } catch (err) {
     res.status(500).json(err);
@@ -148,7 +148,7 @@ router.put('/:model/:id', async (req, res) => {
 
     data = await eval(modelText + expression)
 
-    res.status(200).json('Updated product with id of ' + req.params.id);
+    res.status(200).json(`Updated ${req.params.model} with id of ` + req.params.id);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -156,21 +156,22 @@ router.put('/:model/:id', async (req, res) => {
 
 router.delete('/:model/:id', async (req, res) => {
   try {
-    const model = capitolize(req.params.model)
+    const modelText = capitolize(req.params.model)
+    const model = eval('models.' + modelText)
 
-    if (!models.model) {
+    if (!model) {
       res.status(404).json('This is not a route!');
     }
 
     let data
 
-    const expression = `await ${model}.destroy({
+    const expression = `.destroy({
       where: { id: ${req.params.id} }
     })`
 
-    data = eval(expression)
+    data = await eval(modelText + expression)
 
-    res.status(200).json(data);
+    res.status(200).json(`Delted ${req.params.model} with an id of ${req.params.id}!`);
   } catch (err) {
     res.status(500).json(err);
   }
