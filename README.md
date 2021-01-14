@@ -1,6 +1,6 @@
 # Ecommerce Backend API
 ## Installation
-1. Fork this repo
+1. Clone this repo
 2. Update the .env.example file by naming it ".env" and adding your proper MYSQL information. DB_USER, DB_PW, DB_NAME, optionally PORT.
  * Make sure you have a database with the same name on your machine
 3. `cd` into the directory and type `npm install` to install dependencies
