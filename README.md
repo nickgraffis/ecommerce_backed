@@ -3,7 +3,8 @@
 1. Fork this repo
 2. Update the .env.example file by naming it ".env" and adding your proper MYSQL information. DB_USER, DB_PW, DB_NAME, optionally PORT.
  * Make sure you have a database with the same name on your machine
-3. `cd` into the directory and type `npm run start` into your command line, followed by an enter
+3. `cd` into the directory and type `npm install` to install dependencies
+4. type `npm run start` into your command line, followed by an enter
   * You should see `🚀 listening on port 3001!`. If you specified your own port in your .env file, you'll see that instead.
 
 ## Usage

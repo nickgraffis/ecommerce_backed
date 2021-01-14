@@ -1,23 +1,19 @@
 {
-  "name": "module-13-challenge-orm",
+  "name": "ecommerce_backed",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node server.js" 
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdmarty/ecomBackend"
+    "url": "https://github.com/nickgraffis/ecommerce_backed"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^7.15.0",
-    "nodemon": "^2.0.3"
-  },
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
